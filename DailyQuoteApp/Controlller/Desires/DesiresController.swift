@@ -1,15 +1,14 @@
 //
-//  DailyQuoteController.swift
+//  DesiresController.swift
 //  DailyQuoteApp
 //
-//  Created by Sarmad Ishfaq on 29/08/2021.
+//  Created by Sarmad Ishfaq on 01/09/2021.
 //
 
 import UIKit
 
-class DailyQuoteController: UIViewController {
-
-    let quoteLabel =  label(text: "", textcolor: CustomuserDefaults.textColor, font: .setFont(FontName: .Poppins_ExtraLight, fontSize: 30), alignment: .center)
+class DesiresController: UIViewController {
+    let quoteLabel =  label(text: CustomuserDefaults.desiresText, textcolor: .white, font: .setFont(FontName: .Poppins_ExtraLight, fontSize: 18), alignment: .justified)
     let backButton : UIButton = {
         let button = UIButton()
         button.setImage(UIImage(systemName: "chevron.backward")?.withRenderingMode(.alwaysTemplate), for: .normal)
@@ -17,12 +16,12 @@ class DailyQuoteController: UIViewController {
         return button
     }()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = CustomuserDefaults.appColor
         navigationController?.navigationBar.isHidden = true
         setupViews()
-        loadDailyQuote()
         backButton.imageView?.tintColor = .white
         backButton.addTarget(self, action: #selector(backButtonPressed), for: .touchUpInside)
     }
@@ -30,13 +29,13 @@ class DailyQuoteController: UIViewController {
         super.viewWillDisappear(animated)
         navigationController?.navigationBar.isHidden = false
     }
-    
+
     func setupViews(){
         view.addSubview(backButton)
         view.addSubview(quoteLabel)
         NSLayoutConstraint.activate([
         
-            quoteLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            quoteLabel.topAnchor.constraint(equalTo: backButton.bottomAnchor, constant: 30.autoSized),
             quoteLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25.widthRatio),
             quoteLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25.widthRatio),
             
@@ -48,12 +47,6 @@ class DailyQuoteController: UIViewController {
         
         ])
     }
-
-    func loadDailyQuote(){
-        let dailyQuote = UserDefaults.standard.string(forKey: CustomuserDefaults.dailyQuote)
-        quoteLabel.text = dailyQuote ?? ""
-    }
-    
     @objc func backButtonPressed() {
         navigationController?.popViewController(animated: true)
     }

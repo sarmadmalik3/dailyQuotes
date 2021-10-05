@@ -24,28 +24,48 @@ class AfirmationsController: UIViewController {
         collectionView.register(QuoteCollectionViewCell.self, forCellWithReuseIdentifier: "QuoteCollectionViewCell")
         return collectionView
     }()
-    let PreviousButton = button(text: "Previous", color: .black, font: .setFont(FontName: .popins_Medium, fontSize: 15), cornerradius: 5, bgcolor: #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 0.3342251712))
-    let NextButton = button(text: "Next", color: .black, font: .setFont(FontName: .popins_Medium, fontSize: 15), cornerradius: 5, bgcolor: #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 0.3342251712))
-    
+    let PreviousButton = button(text: "Previous", color: CustomuserDefaults.appColor, font: .setFont(FontName: .popins_Medium, fontSize: 15), cornerradius: 5, bgcolor: CustomuserDefaults.textColor)
+    let NextButton = button(text: "Next", color: CustomuserDefaults.appColor, font: .setFont(FontName: .popins_Medium, fontSize: 15), cornerradius: 5, bgcolor: CustomuserDefaults.textColor)
+    let backButton : UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "chevron.backward")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
     var afirmations : [String] = []
     var index: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = CustomuserDefaults.appColor
         setUpUI()
        getAfirmations()
+        navigationController?.navigationBar.isHidden = true
         PreviousButton.addTarget(self, action: #selector(handlePreviousButton), for: .touchUpInside)
         NextButton.addTarget(self, action: #selector(handleNextButton), for: .touchUpInside)
+        backButton.imageView?.tintColor = .white
+        backButton.addTarget(self, action: #selector(backButtonPressed), for: .touchUpInside)
     }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.navigationBar.isHidden = false
+    }
+    
     func setUpUI(){
         view.addSubview(collectionView)
         view.addSubview(PreviousButton)
         view.addSubview(NextButton)
+        view.addSubview(backButton)
         
         NSLayoutConstraint.activate([
         
-            collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            backButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30.heightRatio),
+            backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 23.widthRatio),
+            
+            backButton.widthAnchor.constraint(equalToConstant: 25.widthRatio),
+            backButton.heightAnchor.constraint(equalToConstant: 25.heightRatio),
+            
+            collectionView.topAnchor.constraint(equalTo: backButton.bottomAnchor, constant: 20.heightRatio),
             collectionView.bottomAnchor.constraint(equalTo: PreviousButton.topAnchor, constant: -20.heightRatio),
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
@@ -99,7 +119,9 @@ class AfirmationsController: UIViewController {
             NextButton.alpha = 1
         }
     }
-    
+    @objc func backButtonPressed() {
+        navigationController?.popViewController(animated: true)
+    }
 }
 extension AfirmationsController : UICollectionViewDelegate, UICollectionViewDataSource , UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

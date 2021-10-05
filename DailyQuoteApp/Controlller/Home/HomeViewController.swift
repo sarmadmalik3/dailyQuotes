@@ -34,7 +34,7 @@ class HomeViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = false
         setUpUI()
         
-        DataManager.shared.showDailyQuote()
+//        DataManager.shared.showDailyQuote()
     }
     //MARK:- Helper Functions
     func setUpUI(){
@@ -53,7 +53,7 @@ class HomeViewController: UIViewController {
 extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSource , UICollectionViewDelegateFlowLayout
 {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return 6
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -77,20 +77,24 @@ extension HomeViewController : UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            let controlller = HomeViewController()
+            let controlller = ReflectionViewController()
             navigationController?.pushViewController(controlller, animated: true)
         case 1:
-            let controlller = DailyQuoteController()
+            let controlller = IntroductionController()
             navigationController?.pushViewController(controlller, animated: true)
         case 2:
-            let controlller = AfirmationsController()
+            let controlller = DailyQuoteController()
             navigationController?.pushViewController(controlller, animated: true)
         case 3:
-            let controlller = HomeViewController()
+            let controlller = AfirmationsController()
             navigationController?.pushViewController(controlller, animated: true)
         case 4:
+            let controlller = DesiresController()
+            navigationController?.pushViewController(controlller, animated: true)
+        case 5:
             let controlller = SettingViewController()
             navigationController?.pushViewController(controlller, animated: true)
+            
         default:
             return
         }

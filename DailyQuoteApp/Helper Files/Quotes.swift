@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 
 class AllQuotes : NSObject {
@@ -22,6 +23,12 @@ struct CustomuserDefaults {
     static let dailyQuotesArray = "DailyQuotesArray"
     static let dailyQuote = "DailyQuote"
     static let firstLaunch = "FirstLaunch"
+    static let appColor = #colorLiteral(red: 0.2, green: 0.0862745098, blue: 0.3254901961, alpha: 1)
+    static let textColor = UIColor.white
+    static let introText = "The Write Flow App has been designed just for you. Writing requires more than grammar, outlines and techniques. Writing requires courage, a belief in ones ability and an unrelenting desire. For some the reality of becoming a publish writer seems out of reach. If this is you, you no longer have to go another year dismissing the dream in your heart. This app is designed to motivate and inspire you toward the finish line."
+    static let desiresText = "Write Flow will help you REMEMBER your goal of becoming a published author by having you determine your deepest desires around publishing.  In this section, find a quiet place and begin recording your goals. Whether your desire is to become a bestselling author or reach a specific amount of people with your message, list 7 writing desires and revisit this page often."
+    
+    static let reflectionText = "Whenever we begin a significant task, count the costs. Understand what is required of you and understand your WHY. This section of the app will display 4 questions to help you unlock your INNER truth.  You can edit your answers any time until you reach authenticity. When you reach this stage you will uncover a conviction which will usher you toward a burning desire. Once you get to this stage nothing will keep you from accomplishing your writing goal."
 }
 
 

@@ -70,6 +70,8 @@ enum fontName : String
     case popins_Bold = "Poppins-Bold"
     case popins_SemiBold = "Poppins-SemiBold"
     case popins_Medium = "Poppins-Medium"
+    case popins_Thin = "Poppins-Thin"
+    case Poppins_ExtraLight = "Poppins-ExtraLight"
     
     
 }

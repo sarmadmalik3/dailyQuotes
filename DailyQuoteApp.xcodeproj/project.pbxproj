@@ -10,6 +10,9 @@
 		04003BFC26DA9A9400D948B6 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04003BFB26DA9A9400D948B6 /* DataManager.swift */; };
 		04003BFF26DAC1D500D948B6 /* AfirmationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04003BFE26DAC1D500D948B6 /* AfirmationsController.swift */; };
 		04003C0226DAC3CD00D948B6 /* DailyQuoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04003C0126DAC3CD00D948B6 /* DailyQuoteController.swift */; };
+		0414978A26DFF230009290D9 /* IntroductionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414978926DFF230009290D9 /* IntroductionController.swift */; };
+		0414978D26DFF40C009290D9 /* DesiresController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414978C26DFF40C009290D9 /* DesiresController.swift */; };
+		0414979026E010D5009290D9 /* ReflectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0414978F26E010D5009290D9 /* ReflectionViewController.swift */; };
 		843734C92694159800945BC2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843734C82694159800945BC2 /* HomeViewController.swift */; };
 		84674195269B2BA70019E8B8 /* QuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84674194269B2BA70019E8B8 /* QuoteViewController.swift */; };
 		84674198269B49890019E8B8 /* QuoteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84674197269B49890019E8B8 /* QuoteCollectionViewCell.swift */; };
@@ -51,6 +54,9 @@
 		04003BFB26DA9A9400D948B6 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		04003BFE26DAC1D500D948B6 /* AfirmationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfirmationsController.swift; sourceTree = "<group>"; };
 		04003C0126DAC3CD00D948B6 /* DailyQuoteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyQuoteController.swift; sourceTree = "<group>"; };
+		0414978926DFF230009290D9 /* IntroductionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroductionController.swift; sourceTree = "<group>"; };
+		0414978C26DFF40C009290D9 /* DesiresController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesiresController.swift; sourceTree = "<group>"; };
+		0414978F26E010D5009290D9 /* ReflectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflectionViewController.swift; sourceTree = "<group>"; };
 		843734C82694159800945BC2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		84674194269B2BA70019E8B8 /* QuoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteViewController.swift; sourceTree = "<group>"; };
 		84674197269B49890019E8B8 /* QuoteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -117,9 +123,36 @@
 			path = "Daily Quotes";
 			sourceTree = "<group>";
 		};
+		0414978826DFF219009290D9 /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				0414978926DFF230009290D9 /* IntroductionController.swift */,
+			);
+			path = Intro;
+			sourceTree = "<group>";
+		};
+		0414978B26DFF3FB009290D9 /* Desires */ = {
+			isa = PBXGroup;
+			children = (
+				0414978C26DFF40C009290D9 /* DesiresController.swift */,
+			);
+			path = Desires;
+			sourceTree = "<group>";
+		};
+		0414978E26E010B2009290D9 /* Reflection */ = {
+			isa = PBXGroup;
+			children = (
+				0414978F26E010D5009290D9 /* ReflectionViewController.swift */,
+			);
+			path = Reflection;
+			sourceTree = "<group>";
+		};
 		843734C72694157B00945BC2 /* Controlller */ = {
 			isa = PBXGroup;
 			children = (
+				0414978E26E010B2009290D9 /* Reflection */,
+				0414978B26DFF3FB009290D9 /* Desires */,
+				0414978826DFF219009290D9 /* Intro */,
 				04003C0026DAC3B700D948B6 /* Daily Quotes */,
 				04003BFD26DAC1C800D948B6 /* Afirmations */,
 				84674193269B2B6B0019E8B8 /* Quote */,
@@ -347,6 +380,7 @@
 				84722DDB2698B7D20074E677 /* SettingDetailTableViewCell.swift in Sources */,
 				04003BFF26DAC1D500D948B6 /* AfirmationsController.swift in Sources */,
 				8471D26D269362F100EE0414 /* ImageIcon.swift in Sources */,
+				0414978D26DFF40C009290D9 /* DesiresController.swift in Sources */,
 				8471D24C2693618400EE0414 /* ViewController.swift in Sources */,
 				8471D2482693618400EE0414 /* AppDelegate.swift in Sources */,
 				8471D26C269362F100EE0414 /* Label.swift in Sources */,
@@ -355,7 +389,9 @@
 				04003C0226DAC3CD00D948B6 /* DailyQuoteController.swift in Sources */,
 				8471D26A269362F100EE0414 /* Buttons.swift in Sources */,
 				8471D26B269362F100EE0414 /* Extensionss.swift in Sources */,
+				0414978A26DFF230009290D9 /* IntroductionController.swift in Sources */,
 				84722DD426986E080074E677 /* MenuCollectionViewCell.swift in Sources */,
+				0414979026E010D5009290D9 /* ReflectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

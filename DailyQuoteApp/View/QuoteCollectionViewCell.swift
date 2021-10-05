@@ -10,7 +10,7 @@ import UIKit
 class QuoteCollectionViewCell: UICollectionViewCell {
     
     //MARK:-UI-Elements
-    let quoteLabel = label(text: "farHan Malik", textcolor: .black, font: .setFont(FontName: .popins_Medium, fontSize: 30), alignment: .center)
+    let quoteLabel = label(text: "farHan Malik", textcolor: CustomuserDefaults.textColor, font: .setFont(FontName: .Poppins_ExtraLight, fontSize: 30), alignment: .center)
     
     override init(frame: CGRect) {
         super.init(frame: frame)

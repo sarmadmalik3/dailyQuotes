@@ -56,23 +56,27 @@ class MenuCollectionViewCell: UICollectionViewCell {
     func updateCellWithTitlteAndImage(index : Int){
         switch index {
         case 0:
-            menuName.text = "Introduction"
-            menuImage.image = UIImage(named: "business")
+            menuName.text = "Reflection"
+            menuImage.image = UIImage(named: "reflection")
             
         case 1:
-            menuName.text = "Daily Inspiration"
+            menuName.text = "Introduction"
             menuImage.image = UIImage(named: "presentation")
             
         case 2:
-            menuName.text = "Afirmations"
-            menuImage.image = UIImage(named: "business")
+            menuName.text = "Daily Inspiration"
+            menuImage.image = UIImage(named: "inspiration")
             
         case 3:
-            menuName.text = "Desires"
-            menuImage.image = UIImage(named: "presentation")
+            menuName.text = "Afirmations"
+            menuImage.image = UIImage(named: "business")
         case 4:
+            menuName.text = "Desires"
+            menuImage.image = UIImage(named: "desires")
+        
+        case 5:
             menuName.text = "Setting"
-            menuImage.image = UIImage(named: "presentation")
+            menuImage.image = UIImage(named: "settings")
 
         default:
             break

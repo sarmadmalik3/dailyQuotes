@@ -10,24 +10,36 @@ import UIKit
 class SettingDetailTableViewCell: UITableViewCell {
     
     //MARK:-UI-Elements
-    let settingLabel = label(text: "Notisfication", textcolor: .black, font: .setFont(FontName: .popins_Medium, fontSize: 16), alignment: .natural)    
-
+    let catagoryLabel = label(text: "Lips", textcolor: .black, font: .setFont(FontName: .popins_Medium, fontSize: 16), alignment: .natural)
+    let containerView : UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        view.layer.cornerRadius = 10.heightRatio
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setUPUI()
+        setUpUI()
+        selectionStyle = .none
+        backgroundColor = .clear
     }
-    
-    func setUPUI()
-    {
-        addSubview(settingLabel)
-        
+
+    //MARK:-Helper Functions
+    func setUpUI(){
+        addSubview(containerView)
+        containerView.addSubview(catagoryLabel)
+
         NSLayoutConstraint.activate([
-           // settingLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            settingLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-            settingLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            settingLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             
-        
+            containerView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25.widthRatio),
+            containerView.trailingAnchor.constraint(equalTo: trailingAnchor , constant: -25.widthRatio),
+            containerView.topAnchor.constraint(equalTo: topAnchor, constant: 10.heightRatio),
+            containerView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10.heightRatio),
+            
+            catagoryLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
+            catagoryLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 19.widthRatio),
         ])
     }
     
@@ -35,4 +47,19 @@ class SettingDetailTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func bindData(index: Int) {
+        switch index {
+        case 0:
+            catagoryLabel.text = "Notifications"
+        case 1:
+            catagoryLabel.text = "Feedback"
+        case 2:
+            catagoryLabel.text = "Copyright & Legal"
+        
+        
+        default:
+            break
+        }
+    }
+
 }
